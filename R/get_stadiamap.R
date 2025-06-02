@@ -304,8 +304,10 @@ get_stamen_url <- function(maptype, zoom, x, y) {
 
   # format URL
   if(maptype %in% c("stamen_watercolor")) filetype <- "jpg" else filetype <- "png"
-  url <- glue("https://tiles.stadiamaps.com/tiles/{maptype}/{zoom}/{x}/{y}.{filetype}?api_key={key}")
+  #url <- glue("https://tiles.stadiamaps.com/tiles/{maptype}/{zoom}/{x}/{y}.{filetype}?api_key={key}")
 
+  # please don't use this on a large scale, thanks and please
+  url <- glue("https://tiles.openstreetmap.org/{zoom}/{x}/{y}.{filetype}")
   return(url)
 }
 
